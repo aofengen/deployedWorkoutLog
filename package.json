@@ -1,0 +1,21 @@
+{
+  "name": "workoutlogclient",
+  "version": "1.0.0",
+  "description": "WorkoutLog Client server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node_modules/http-server/bin/http-server"
+  },
+  "author": "Aaron Ofengender",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "http-server": "^0.10.0"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0"
+  }
+}

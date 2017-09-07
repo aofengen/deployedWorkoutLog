@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+		<title>Workout Log</title>
+	</head>
+	<body>
+		<ul class="nav nav-tabs">
+			<li><a href="#home" id="loginout" class="disabled" data-toggle="tab">Login</a></li>
+			<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+			<li><a href="#define" data-toggle="tab">Define</a></li>
+			<li><a href="#log" data-toggle="tab">Log</a></li>
+			<li><a href="#history" data-toggle="tab">View History</a></li>
+			<a href="#update-log" data-toggle="tab" class="disabled" type="hidden"></a>
+		</ul>
+
+		<div class="container">
+			<div class="tab-content">
+				<div class="tab-pane active" id="home">
+					<h2>Workout Log!</h2>
+					<div id="forLogin">
+						<button data-toggle="modal" data-target="#login-modal" class="btn btn-primary">Login</button>
+						<button data-toggle="modal" data-target="#signup-modal" class="btn btn-primary">Sign Up</button>
+					</div>
+					<div id="forLogout" style="display:none;">
+						<button class="btn btn-primary">Logout</button>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="define">
+					<h2>Define</h2>
+					<label for="def-description">Description</label>
+					<textarea class="form-control" id="def-description" rows="3"></textarea>
+					<label for="def-logtype">Log work by</label>
+					<select class="form-control" id="def-logtype">
+						<option>Time</option>
+						<option>Weight</option>
+						<option>Reps</option>
+					</select>
+					<button id="def-save" class="btn btn-primary">Save</button>
+				</div>
+				<div class="tab-pane fade" id="log">
+					<h2>Log!</h2>
+					<label>Result</label>
+					<input type="text" class="form-control" id="log-result" />
+					<label>Workout Select:</label>
+					<select class="form-control" id="log-definition"></select>
+					<label>Notes</label>
+					<textarea id="log-description" rows="3" class="form-control"></textarea>
+					<button class="btn btn-primary" id="log-save">Save</button>
+				</div>
+				<div class="tab-pane fade" id="update-log">
+					<h2>Log Update</h2>
+					<label>Result</label>
+					<input type="hidden" class="form-control" id="update-id" />
+					<input type="text" class="form-control" id="update-result" />
+					<label>Workout Select:</label>
+					<select id="update-definition" class="form-control"></select>
+					<label>Notes</label>
+					<textarea id="update-description" rows="3" class="form-control"></textarea>
+					<br>
+					<button class="btn btn-primary" id="log-update">Save</button>
+				</div>
+				<div class="tab-pane fade" id="history">
+					<h2>History</h2>
+					<ul class="list-group" id="history-list">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- login screen-->
+		<div class="modal fade" id="login-modal" role-"dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+						<span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Login</h4>
+					</div>
+					<div class="modal-body">
+						<div class="alert alert-danger" style="display:none;" role="alert" id="li_error"></div>
+						<label for="li_username">Username:</label>
+						<input class="form-control" id="li_username" />
+						<label for="li_password">Password:</label>
+						<input type="password" class="form-control" id="li_password" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button class="but btn-primary" id="login" type="button">Login</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- sign up screen-->
+		<div class="modal fade" id="signup-modal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Sign Up</h4>
+					</div>
+					<div class="modal-body">
+						<div class="alert alert-danger" role="alert" style="display:none;" id="su_error"></div>
+						<label for="su_username">Username:</label>
+						<input type="text" id="su_username" />
+						<label for="su_password">Password:</label>
+						<input type="password" id="su_password" />
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
+						<button id="signup" type="button" class="btn btn-primary">Signup</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- 	<script src="app.js"></script>
+		<script src="./user/auth.js"></script>
+		<script src="./workouts/define.js"></script>
+		<script src="./workouts/log.js"></script> -->
+		<script src="./dist/bundle.js"></script>
+	</body> 
+</html>
