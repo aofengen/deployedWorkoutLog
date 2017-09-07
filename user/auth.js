@@ -90,7 +90,7 @@ $(function(){
 		$("#signup").on("click", WorkoutLog.signup);
 		$("#loginout").on("click", function() {
 			window.location.reload(true);
-	}
+	};
 		if (window.localStorage.getItem("sessionToken")) {
 			$("#loginout").text("Logout");
 		}
