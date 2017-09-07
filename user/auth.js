@@ -81,7 +81,6 @@ $(function(){
 				window.localStorage.removeItem("sessionToken");
 				window.location.reload(true);
 			}
-		location = location;
 		}
 	});
 		//bind events
