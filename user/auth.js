@@ -82,9 +82,7 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 			}
-			//TODO: on logout make sure stuff is disabled
-			$("#loginout").text("Login");
-			$('a[href="#home"]').tab("show");
+			window.location.reload();
 		}
 	});
 		//bind events
