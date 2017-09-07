@@ -88,7 +88,9 @@ $(function(){
 		//bind events
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
-		$("#loginout").on("click", window.location.reload(true));
+		$("#loginout").on("click", function() {
+			window.location.reload(true);
+	}
 		if (window.localStorage.getItem("sessionToken")) {
 			$("#loginout").text("Logout");
 		}
