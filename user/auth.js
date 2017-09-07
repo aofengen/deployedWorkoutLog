@@ -82,7 +82,7 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 			}
-			window.location.reload();
+		self.location.reload();
 		}
 	});
 		//bind events
