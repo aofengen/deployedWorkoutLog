@@ -79,6 +79,7 @@ $(function(){
 		loginout: function() {
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
+				window.location.reload(true);
 			}
 		location = location;
 		}
@@ -86,9 +87,7 @@ $(function(){
 		//bind events
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
-		$("#loginout").on("click", function() {
-			window.location.reload();
-			});
+		$("#loginout").on("click", WorkoutLog.loginout);
 		if (window.localStorage.getItem("sessionToken")) {
 			$("#loginout").text("Logout");
 		}
