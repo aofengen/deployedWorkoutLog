@@ -18,7 +18,6 @@ $(function() {
 				let history = WorkoutLog.log.workouts;
 				let len = history.length;
 				let lis = "";
-				console.log(history);
 				for (let i = 0; i < len; i++) {
 					lis += "<li class='list-group-item'>" + 
 					history[i].def + " - " +
