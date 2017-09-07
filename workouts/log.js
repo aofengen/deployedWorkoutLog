@@ -76,7 +76,7 @@ $(function() {
 					desc: $("#update-description").val(),
 					result: $("#update-result").val(),
 					def: $("#update-definition option:selected").text()
-				};
+				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
 						WorkoutLog.log.workouts.splice(i, 1);
