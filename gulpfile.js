@@ -10,8 +10,10 @@ const javascriptFiles = [
 ];
 
 gulp.task('bundle', function() {
-	return gulp.src(javascriptFiles).pipe(concat('bundle.js')).pipe(uglify()).pipe(gulp.dest("./dist"));
-//   								squish files together into one file 	  save bundle.js
+	return gulp.src(javascriptFiles)
+	.pipe(concat('bundle.js')) //squish files together into one file
+	.pipe(uglify())
+	.pipe(gulp.dest("./dist")); //save bundle.js  								 	  
 });
 
 //default task when 'gulp' runs: bundle, starts web server, then watches for changes
