@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+
 $(function(){
 	$.extend(WorkoutLog, {
 		//signup method
@@ -79,9 +81,10 @@ $(function(){
 		loginout: function() {
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
-				$("#loginout").text("Login");
 			}
 			//TODO: on logout make sure stuff is disabled
+			$("#loginout").text("Login");
+			$('a[href="#home"]').tab("show");
 		}
 	});
 		//bind events
