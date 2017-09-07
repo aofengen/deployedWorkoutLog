@@ -82,7 +82,7 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 			}
-		self.location.reload();
+		window.location.assign('https://cool-aarons-exercise-app.herokuapp.com/');
 		}
 	});
 		//bind events
