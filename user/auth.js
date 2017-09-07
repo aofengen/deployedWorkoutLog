@@ -1,5 +1,3 @@
-const jwt = require('jsonwebtoken');
-
 $(function(){
 	$.extend(WorkoutLog, {
 		//signup method
