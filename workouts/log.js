@@ -57,19 +57,19 @@ $(function() {
 				let thisLog = {id: $(this).attr("id")};
 				logID = thisLog.id;
 				let updateData = {log: thisLog};
-				console.log(updateData);
 				let getLog = $.ajax({
 					type: "GET",
 					url: WorkoutLog.API_BASE + "log/" + logID,
 					data: JSON.stringify(updateData),
 					contentType: "application/json"
 				});
+				console.log(getLog);
 				getLog.done(function(data){
 					$('a[href="#update-log"]').tab("show");
 					$('#update-result').val(data.result);
 					$('#update-description').val(data.description);
 					$('#update-id').val(data.id);
-					$('#update-intensity').va;(data.int);
+					$('#update-intensity').val(data.int);
 				});
 			},
 			updateWorkout: function() {
