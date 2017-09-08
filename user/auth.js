@@ -29,8 +29,9 @@ $(function(){
 					WorkoutLog.log.fetchAll();
 				};
 				$("#signup-modal").modal("hide");
+				$("#homePage").hide();
 				$(".disabled").removeClass("disabled");
-				$("#loginout").text("Logout");
+				$("#logout").show();
 				$("#su_username").val("");
 				$("#su_password").val("");
 				$('a[href="#define"]').tab("show"); //routing
@@ -67,7 +68,8 @@ $(function(){
 				}
 				$("#login-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
-				$("#loginout").text("Logout");
+				$("#homePage").hide().addClass("disabled");
+				$(".tab1").show();
 				$("#li_username").val("");
 				$("#li_password").val("");
 				$('a[href="#define"]').tab("show");
@@ -76,17 +78,18 @@ $(function(){
 			});
 		},
 		//loginoutmethod
-		loginout: function() {
+		logout: function() {
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
-				window.location.reload(true);
 			}
+			$("#homePage").show().removeClass("disabled");
+			$(".tab1").hide().addClass("disabled");
 		}
 	});
 		//bind events
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
-		$("#loginout").on("click", WorkoutLog.loginout);
+		$("#logout").on("click", WorkoutLog.loginout);
 		if (window.localStorage.getItem("sessionToken")) {
 			$("#loginout").text("Logout");
 		}
