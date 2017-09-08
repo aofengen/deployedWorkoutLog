@@ -63,7 +63,7 @@ $(function() {
 					data: JSON.stringify(updateData),
 					contentType: "application/json"
 				});
-				console.log(getLog);
+				console.log(data);
 				getLog.done(function(data){
 					$('a[href="#update-log"]').tab("show");
 					$('#update-result').val(data.result);
@@ -78,8 +78,8 @@ $(function() {
 					id: $('#update-id').val(),
 					desc: $("#update-description").val(),
 					result: $("#update-result").val(),
-					def: $("#update-definition option:selected").text(),
-					int: $("#update-intensity option:selected").text()
+					def: $("#update-definition option:selected").val(),
+					int: $("#update-intensity option:selected").val()
 				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
