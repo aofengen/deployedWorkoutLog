@@ -18,6 +18,7 @@ $(function() {
 				let len = history.length;
 				let lis = "";
 				for (let i = 0; i < len; i++) {
+					console.log(history[i].def + " " + history[i].int + " "+ history[i].result);
 					lis += "<li class='list-group-item'>" + 
 					history[i].def + " (" +
 					history[i].int + ")" + " - " +
