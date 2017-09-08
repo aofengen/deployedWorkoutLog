@@ -71,7 +71,7 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$("#homePage").hide().addClass("disabled");
 				$(".tab1").show();
-				$("#history").val("View History");
+				$("#history").text("View History");
 				$("#li_username").val("");
 				$("#li_password").val("");
 				$('a[href="#define"]').tab("show");
