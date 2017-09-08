@@ -32,6 +32,8 @@ $(function(){
 				$("#homePage").hide();
 				$(".disabled").removeClass("disabled");
 				$("#logout").show();
+				$("#defineTab").text("Define");
+				$("#logTab").text("Log");
 				$("#historyTab").text("View History");
 				$("#su_username").val("");
 				$("#su_password").val("");
@@ -71,6 +73,8 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$("#homePage").hide().addClass("disabled");
 				$(".tab1").show();
+				$("#defineTab").text("Define");
+				$("#logTab").text("Log");
 				$("#historyTab").text("View History");
 				$("#li_username").val("");
 				$("#li_password").val("");
