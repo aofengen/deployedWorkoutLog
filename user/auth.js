@@ -75,8 +75,8 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$(".hidden").removeClass("hidden");
 				// $("#homeTab").hide().addClass("disabled");
-				$(".tab1").show();
-				$("#logout").text("Logout");
+				// $(".tab1").show();
+				$("#logoutTab").text("Logout");
 				$("#defineTab").text("Define");
 				$("#logTab").text("Log");
 				$("#historyTab").text("View History");
@@ -99,5 +99,5 @@ $(function(){
 		//bind events
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
-		$("#logout").on("click", WorkoutLog.logout);
+		$("#logoutTab").on("click", WorkoutLog.logout);
 })
