@@ -32,6 +32,7 @@ $(function(){
 				$("#homePage").hide();
 				$(".disabled").removeClass("disabled");
 				$("#logout").show();
+				$("#history").text("View History");
 				$("#su_username").val("");
 				$("#su_password").val("");
 				$('a[href="#define"]').tab("show"); //routing
@@ -70,6 +71,7 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$("#homePage").hide().addClass("disabled");
 				$(".tab1").show();
+				$("#history").text("View History");
 				$("#li_username").val("");
 				$("#li_password").val("");
 				$('a[href="#define"]').tab("show");
@@ -91,6 +93,6 @@ $(function(){
 		$("#signup").on("click", WorkoutLog.signup);
 		$("#logout").on("click", WorkoutLog.logout);
 		if (window.localStorage.getItem("sessionToken")) {
-			$("#loginout").text("Logout");
+			$("#logout").text("Logout");
 		}
 })
