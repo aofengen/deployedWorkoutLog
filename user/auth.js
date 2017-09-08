@@ -31,7 +31,7 @@ $(function(){
 				$("#signup-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$(".hidden").removeClass("hidden");
-				$("#homeTab").hide().addClass("disabled");
+				// $("#homeTab").hide().addClass("disabled");
 				$(".tab1").show();
 				$("#logout").text("Logout");
 				$("#defineTab").text("Define");
@@ -74,7 +74,7 @@ $(function(){
 				$("#login-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$(".hidden").removeClass("hidden");
-				$("#homeTab").hide().addClass("disabled");
+				// $("#homeTab").hide().addClass("disabled");
 				$(".tab1").show();
 				$("#logout").text("Logout");
 				$("#defineTab").text("Define");
@@ -92,7 +92,7 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 			}
-			$("#homePage").show().removeClass("disabled");
+			// $("#homePage").show().removeClass("disabled");
 			$(".tab1").hide().addClass("disabled");
 		}
 	});
