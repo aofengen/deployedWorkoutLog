@@ -89,7 +89,7 @@ $(function(){
 		//bind events
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
-		$("#logout").on("click", WorkoutLog.loginout);
+		$("#logout").on("click", WorkoutLog.logout);
 		if (window.localStorage.getItem("sessionToken")) {
 			$("#loginout").text("Logout");
 		}
