@@ -29,9 +29,10 @@ $(function(){
 					WorkoutLog.log.fetchAll();
 				};
 				$("#signup-modal").modal("hide");
-				$("#homePage").hide();
 				$(".disabled").removeClass("disabled");
-				$("#logout").show();
+				$("#homePage").hide().addClass("disabled");
+				$(".tab1").show();
+				$("#logout").text("Logout");
 				$("#defineTab").text("Define");
 				$("#logTab").text("Log");
 				$("#historyTab").text("View History");
@@ -73,6 +74,7 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$("#homePage").hide().addClass("disabled");
 				$(".tab1").show();
+				$("#logout").text("Logout");
 				$("#defineTab").text("Define");
 				$("#logTab").text("Log");
 				$("#historyTab").text("View History");
@@ -96,7 +98,4 @@ $(function(){
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
 		$("#logout").on("click", WorkoutLog.logout);
-		if (window.localStorage.getItem("sessionToken")) {
-			$("#logout").text("Logout");
-		}
 })
