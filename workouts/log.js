@@ -63,7 +63,7 @@ $(function() {
 					data: JSON.stringify(updateData),
 					contentType: "application/json"
 				});
-				console.log(data);
+				console.log(getLog.data);
 				getLog.done(function(data){
 					$('a[href="#update-log"]').tab("show");
 					$('#update-result').val(data.result);
