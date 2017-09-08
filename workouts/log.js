@@ -19,7 +19,7 @@ $(function() {
 				let lis = "";
 				for (let i = 0; i < len; i++) {
 					lis += "<li class='list-group-item'>" + 
-					history[i].def + " ("
+					history[i].def + " (" +
 					history[i].int + ")" + " - " +
 					history[i].result + " " +
 					//pass the log.id into the button's id attribute
