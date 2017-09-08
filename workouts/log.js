@@ -57,6 +57,7 @@ $(function() {
 				let thisLog = {id: $(this).attr("id")};
 				logID = thisLog.id;
 				let updateData = {log: thisLog};
+				console.log(updateData);
 				let getLog = $.ajax({
 					type: "GET",
 					url: WorkoutLog.API_BASE + "log/" + logID,
@@ -78,7 +79,7 @@ $(function() {
 					desc: $("#update-description").val(),
 					result: $("#update-result").val(),
 					def: $("#update-definition option:selected").text(),
-					int: $("update-intensity option:selected").text()
+					int: $("#update-intensity option:selected").text()
 				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
@@ -86,6 +87,7 @@ $(function() {
 					}
 				}
 				WorkoutLog.log.workouts.push(updateLog);
+				console.log(updateLog);
 				let updateLogData = {log: updateLog};
 				let updater = $.ajax({
 					type: "PUT",
