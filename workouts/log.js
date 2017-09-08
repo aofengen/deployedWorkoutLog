@@ -78,8 +78,8 @@ $(function() {
 					id: $('#update-id').val(),
 					desc: $("#update-description").val(),
 					result: $("#update-result").val(),
-					def: $("#update-definition option:selected").val(),
-					int: $("#update-intensity option:selected").val()
+					def: $("#update-definition option:selected").text(),
+					int: $("#update-intensity option:selected").text()
 				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
