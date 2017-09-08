@@ -19,7 +19,8 @@ $(function() {
 				let lis = "";
 				for (let i = 0; i < len; i++) {
 					lis += "<li class='list-group-item'>" + 
-					history[i].def + " - " +
+					history[i].def + " ("
+					history[i].int + ")" + " - " +
 					history[i].result + " " +
 					//pass the log.id into the button's id attribute
 					"<div class='pull-right'>" +
@@ -34,7 +35,8 @@ $(function() {
 				let itsLog = {
 					desc: $("#log-description").val(),
 					result: $("#log-result").val(),
-					def: $("#log-definition option:selected").text()
+					def: $("#log-definition option:selected").text(),
+					int: $("#log-intensity option:selected").text()
 				};
 				console.log(itsLog)
 				let postData = {log: itsLog};
@@ -66,6 +68,7 @@ $(function() {
 					$('#update-result').val(data.result);
 					$('#update-description').val(data.description);
 					$('#update-id').val(data.id);
+					$('#update-intensity').va;(data.int);
 				});
 			},
 			updateWorkout: function() {
@@ -74,7 +77,8 @@ $(function() {
 					id: $('#update-id').val(),
 					desc: $("#update-description").val(),
 					result: $("#update-result").val(),
-					def: $("#update-definition option:selected").text()
+					def: $("#update-definition option:selected").text(),
+					int: $("update-intensity option:selected").text()
 				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
@@ -96,7 +100,7 @@ $(function() {
 				});
 				updater.fail(function() {
 					alert("Failed to update.");
-					console.log("Failed to delete");
+					console.log("Failed to update");
 				})
 			},
 			delete: function() {
