@@ -30,7 +30,8 @@ $(function(){
 				};
 				$("#signup-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
-				$("#homePage").hide().addClass("disabled");
+				$(".hidden").removeClass("hidden");
+				$("#homeTab").hide().addClass("disabled");
 				$(".tab1").show();
 				$("#logout").text("Logout");
 				$("#defineTab").text("Define");
@@ -72,7 +73,8 @@ $(function(){
 				}
 				$("#login-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
-				$("#homePage").hide().addClass("disabled");
+				$(".hidden").removeClass("hidden");
+				$("#homeTab").hide().addClass("disabled");
 				$(".tab1").show();
 				$("#logout").text("Logout");
 				$("#defineTab").text("Define");
