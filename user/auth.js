@@ -32,7 +32,7 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$(".hidden").removeClass("hidden");
 				// $("#homeTab").hide().addClass("disabled");
-				// $(".tab1").show();
+				$(".tab1").show();
 				$("#logoutTab").text("Logout");
 				$("#defineTab").text("Define");
 				$("#logTab").text("Log");
@@ -75,7 +75,7 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$(".hidden").removeClass("hidden");
 				// $("#homeTab").hide().addClass("disabled");
-				// $(".tab1").show();
+				$(".tab1").show();
 				$("#logoutTab").text("Logout");
 				$("#defineTab").text("Define");
 				$("#logTab").text("Log");
