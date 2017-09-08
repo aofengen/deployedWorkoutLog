@@ -32,7 +32,7 @@ $(function(){
 				$("#homePage").hide();
 				$(".disabled").removeClass("disabled");
 				$("#logout").show();
-				$("#history").val("View History");
+				$("#historyTab").text("View History");
 				$("#su_username").val("");
 				$("#su_password").val("");
 				$('a[href="#define"]').tab("show"); //routing
@@ -71,7 +71,7 @@ $(function(){
 				$(".disabled").removeClass("disabled");
 				$("#homePage").hide().addClass("disabled");
 				$(".tab1").show();
-				$("#history").text("View History");
+				$("#historyTab").text("View History");
 				$("#li_username").val("");
 				$("#li_password").val("");
 				$('a[href="#define"]').tab("show");
