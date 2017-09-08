@@ -14,7 +14,6 @@ $(function() {
 					$("#" + type + "-definition").append(opts);
 			},
 			setHistory: function() {
-				console.log(WorkoutLog.log.workouts);
 				let history = WorkoutLog.log.workouts;
 				let len = history.length;
 				let lis = "";
@@ -95,6 +94,10 @@ $(function() {
 					$("#update-result").val("");
 					$('a[href="#history"]').tab("show");
 				});
+				updater.fail(function() {
+					alert("Failed to update.");
+					console.log("Failed to delete");
+				})
 			},
 			delete: function() {
 				let thisLog = {
@@ -119,6 +122,7 @@ $(function() {
 					}
 				}
 				deleteLog.fail(function() {
+					alert("Failed to delete.");
 					console.log("nope. you didn't delete it.");
 				});
 			},

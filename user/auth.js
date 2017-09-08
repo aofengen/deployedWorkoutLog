@@ -84,7 +84,7 @@ $(function(){
 				$("#li_password").val("");
 				$('a[href="#define"]').tab("show");
 			}).fail(function (){
-				$("#li_error").text("There was an issue with the login").show();
+				$("#li_error").text("Unable to login.").show();
 			});
 		},
 		//loginoutmethod
@@ -92,7 +92,6 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 			}
-			// $("#homePage").show().removeClass("disabled");
 			$(".tab1").hide().addClass("disabled");
 		}
 	});
