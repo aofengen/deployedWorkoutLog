@@ -5,7 +5,9 @@ $(function(){
 			//username and password variables
 			let username = $("#su_username").val();
 			let password = $("#su_password").val();
-			if (username != "" || password != "") {
+			if (username === "" || password === "") {
+				$("#su_error").text("Please enter a username and password").show();
+			} else {
 				//user object
 				let user = {
 					user: {
@@ -44,9 +46,7 @@ $(function(){
 				}).fail(function() {
 					$("#su_error").text("There was an issue with sign up").show();
 				})
-			} else {
-				$("#su_error").text("Please enter a username and password.").show();
-			}
+			} 
 		},
 
 		//login method
@@ -54,7 +54,9 @@ $(function(){
 			//login variables
 			let username = $("#li_username").val();
 			let password = $("#li_password").val();
-			if (username != "" || password != "") {
+			if (username === "" || password === "") {
+				$("#li_error").text("Please enter a username and password").show();
+			} else {
 				let user = {
 					user: {
 						username: username,
@@ -91,9 +93,7 @@ $(function(){
 				}).fail(function (){
 					$("#li_error").text("Unable to login.").show();
 				});
-			} else {
-				$("#li_error").text("Please enter a username and password").show();
-			}
+			} 
 		},
 		//loginoutmethod
 		logout: function() {
