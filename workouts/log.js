@@ -85,6 +85,7 @@ $(function() {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
 						WorkoutLog.log.workouts.splice(i, 1, updateLog);
 					}
+					break;
 				}
 				WorkoutLog.log.workouts.push(updateLog);
 				console.log(updateLog);
