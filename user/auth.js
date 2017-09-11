@@ -5,7 +5,7 @@ $(function(){
 			//username and password variables
 			let username = $("#su_username").val();
 			let password = $("#su_password").val();
-			if (username === "" || password === "") {
+			if (username !== "" || password !== "") {
 				//user object
 				let user = {
 					user: {
@@ -54,7 +54,7 @@ $(function(){
 			//login variables
 			let username = $("#li_username").val();
 			let password = $("#li_password").val();
-			if (username ==="" || password === "") {
+			if (username !== "" || password !== "") {
 				let user = {
 					user: {
 						username: username,
