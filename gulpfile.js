@@ -39,14 +39,13 @@
 // //default task when 'gulp' runs: bundle, starts web server, then watches for changes
 // gulp.task('default', ['bundle', 'watch']);
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify-es').default;
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify-es').default;
 // var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var watch = require('gulp-watch');
+const sourcemaps = require('gulp-sourcemaps');
 
-var javascriptFiles = [
+const javascriptFiles = [
 	'./app.js',
 	'./workouts/define.js',
 	'./workouts/log.js',
@@ -62,8 +61,4 @@ gulp.task('bundle', function() {
 		.pipe(gulp.dest('./dist'));// save into /dist folder
 });
 
-gulp.task('watch', function(){
-	gulp.watch(javascriptFiles, ['bundle']);
-});
-
-gulp.task('default', ['bundle', 'watch']);
+gulp.task('default', ['bundle']);
