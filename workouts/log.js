@@ -83,7 +83,7 @@ $(function() {
 				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
-						WorkoutLog.log.workouts.splice(i, 1, thisLog);
+						WorkoutLog.log.workouts.splice(i, 1, updateLog);
 					}
 				}
 				WorkoutLog.log.workouts.push(updateLog);
