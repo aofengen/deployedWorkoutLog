@@ -81,14 +81,14 @@ $(function() {
 					def: $("#update-definition option:selected").text(),
 					int: $("#update-intensity option:selected").text()
 				}
+				updateLog.id = Number.parseInt(updateLog.id, 10);
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
 						WorkoutLog.log.workouts.splice(i, 1);
 					}
 					break;
 				}
-				WorkoutLog.log.workouts.push(updateLog);
-				console.log(WorkoutLog.log.workouts);
+				WorkoutLog.log.workouts.sync();
 				WorkoutLog.log.workouts.sort(function(a, b){
 					return a.id - b.id;
 				});
