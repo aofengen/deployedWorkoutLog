@@ -1,3 +1,45 @@
 body {
-	background-color: #1414de;
+	background-image: url('/dist/img/homePage.jpg');
+	background-size: 100%; 
+}
+
+h1 {
+	font-size: 80px;
+	color: white;
+	text-shadow: black 0 0 30px;
+}
+
+h2 {
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	text-shadow: black 0 0 20px;
+}
+
+h3 {
+	font-size: 30px;
+	color: white;
+	text-shadow: black 0 0 15px;
+}
+
+label {
+	color: black;
+}
+
+.modalLabel {
+	color: black;
+}
+
+.nav {
+	background-color: black;
+}
+
+#home {
+	margin: 20em;
+	text-align: center;
+}
+
+div.clear {
+	clear: both;
+	font-size: 1%;
 }

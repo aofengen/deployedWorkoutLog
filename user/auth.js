@@ -33,13 +33,8 @@ $(function(){
 					};
 					$("#signup-modal").modal("hide");
 					$(".disabled").removeClass("disabled");
-					$(".hidden").removeClass("hidden");
-					// $("#homeTab").hide().addClass("disabled");
-					$(".tab1").show();
-					$("#logoutTab").text("Logout");
-					$("#defineTab").text("Define");
-					$("#logTab").text("Log");
-					$("#historyTab").text("View History");
+					$(".nav").removeClass("hidden");
+					$(".nav").show();
 					$("#su_username").val("");
 					$("#su_password").val("");
 					$('a[href="#define"]').tab("show"); //routing
@@ -80,13 +75,8 @@ $(function(){
 					}
 					$("#login-modal").modal("hide");
 					$(".disabled").removeClass("disabled");
-					$(".hidden").removeClass("hidden");
-					// $("#homeTab").hide().addClass("disabled");
-					$(".tab1").show();
-					$("#logoutTab").text("Logout");
-					$("#defineTab").text("Define");
-					$("#logTab").text("Log");
-					$("#historyTab").text("View History");
+					$(".nav").removeClass("hidden");
+					$(".nav").show();
 					$("#li_username").val("");
 					$("#li_password").val("");
 					$('a[href="#define"]').tab("show");
@@ -100,11 +90,11 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 			}
-			$(".tab1").hide().addClass("disabled");
+			$(".nav").hide().addClass("disabled");
 		}
 	});
 		//bind events
 		$("#login").on("click", WorkoutLog.login);
 		$("#signup").on("click", WorkoutLog.signup);
-		$("#logoutTab").on("click", WorkoutLog.logout);
+		$("#logout").on("click", WorkoutLog.logout);
 })
