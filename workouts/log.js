@@ -92,7 +92,7 @@ $(function() {
 				WorkoutLog.log.workouts.sort(function(a, b){
 					return a.id - b.id;
 				});
-				setHistory();
+				WorkoutLog.log.setHistory;
 				console.log(WorkoutLog.log.workouts);
 				let updateLogData = {log: updateLog};
 				let updater = $.ajax({
