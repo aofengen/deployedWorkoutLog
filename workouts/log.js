@@ -83,12 +83,16 @@ $(function() {
 				}
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
-						WorkoutLog.log.workouts.splice(i, 1, updateLog);
+						WorkoutLog.log.workouts.splice(i, 1);
 					}
 					break;
 				}
 				WorkoutLog.log.workouts.push(updateLog);
-				console.log(updateLog);
+				console.log(WorkoutLog.log.workouts);
+				WorkoutLog.log.workouts.sort(function(a, b){
+					return a.id - b.id;
+				});
+				console.log(WorkoutLog.log.workouts);
 				let updateLogData = {log: updateLog};
 				let updater = $.ajax({
 					type: "PUT",
@@ -99,6 +103,7 @@ $(function() {
 				updater.done(function(data) {
 					$("#update-description").val("");
 					$("#update-result").val("");
+					WorkoutLog.log.setHistory;
 					$('a[href="#history"]').tab("show");
 				});
 				updater.fail(function() {
