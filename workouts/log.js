@@ -15,6 +15,9 @@ $(function() {
 			},
 			setHistory: function() {
 				let history = WorkoutLog.log.workouts;
+				history.sort(function(a, b){
+					return a.id - b.id;
+				});
 				let len = history.length;
 				let lis = "";
 				for (let i = 0; i < len; i++) {
