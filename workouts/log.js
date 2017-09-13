@@ -21,7 +21,8 @@ $(function() {
 				let len = history.length;
 				let lis = "";
 				for (let i = 0; i < len; i++) {
-					lis += "<li class='list-group-item'>" + 
+					lis += "<li class='list-group-item'>" +
+					history[i].date + " - " + 
 					history[i].def + " (" +
 					history[i].int + ")" + " - " +
 					history[i].result + " " +
@@ -36,6 +37,7 @@ $(function() {
 			},
 			create: function() {
 				let itsLog = {
+					date: $("#log-date").val(),
 					desc: $("#log-description").val(),
 					result: $("#log-result").val(),
 					def: $("#log-definition option:selected").text(),
@@ -51,6 +53,7 @@ $(function() {
 				});
 				logger.done(function(data) {
 					WorkoutLog.log.workouts.push(data);
+					$("#log-date").val("");
 					$("#log-description").val("");
 					$("#log-result").val("");
 					$('a[href="#history"]').tab("show");
@@ -66,11 +69,12 @@ $(function() {
 					data: JSON.stringify(updateData),
 					contentType: "application/json"
 				});
-				console.log(getLog.data);
+				console.log(getLog);
 				getLog.done(function(data){
 					$('a[href="#update-log"]').tab("show");
+					$('#update-date').val(data.result);
 					$('#update-result').val(data.result);
-					$('#update-description').val(data.description);
+					$('#update-description').val(data.desc);
 					$('#update-id').val(data.id);
 					$('#update-intensity').val(data.int);
 				});
@@ -78,25 +82,20 @@ $(function() {
 			updateWorkout: function() {
 				$("#update").text("Update");
 				let updateLog = {
+					date: $('#update-date').val(),
 					id: $('#update-id').val(),
 					desc: $("#update-description").val(),
 					result: $("#update-result").val(),
 					def: $("#update-definition option:selected").text(),
 					int: $("#update-intensity option:selected").text()
 				}
-				updateLog.id = Number.parseInt(updateLog.id, 10)
 				for (let i = 0; i < WorkoutLog.log.workouts.length; i++) {
 					if(WorkoutLog.log.workouts[i].id == updateLog.id) {
 						WorkoutLog.log.workouts.splice(i, 1);
+						break;
 					}
-					break;
 				}
-				WorkoutLog.log.workouts.push(updateLog);
-				WorkoutLog.log.workouts.sort(function(a, b){
-					return a.id - b.id;
-				});
-				WorkoutLog.log.setHistory;
-				console.log(WorkoutLog.log.workouts);
+				updateLog.id = Number.parseInt(updateLog.id, 10)
 				let updateLogData = {log: updateLog};
 				let updater = $.ajax({
 					type: "PUT",
@@ -105,13 +104,15 @@ $(function() {
 					contentType: "application/json"
 				});
 				updater.done(function(data) {
+					WorkoutLog.log.setHistory;
+					console.log(WorkoutLog.log.workouts);
+					$("#update-date").val("");
 					$("#update-description").val("");
 					$("#update-result").val("");
 					$('a[href="#history"]').tab("show");
 				});
 				updater.fail(function() {
 					alert("Failed to update.");
-					console.log("Failed to update");
 				})
 			},
 			delete: function() {
@@ -141,6 +142,40 @@ $(function() {
 					console.log("nope. you didn't delete it.");
 				});
 			},
+			compareWorkouts: function() {
+				let history = WorkoutLog.log.workouts;
+				history.sort(function(a, b){
+					return a.id - b.id;
+				});
+				let sortV = $("#compare-definition option:selected").text();
+				let len = history.length;
+				let compare = [];
+				for (let i = 0; i < len; i++){
+					if (history[i].def === sortV) {
+						compare.push(history[i]);
+					}
+				}
+				compare.sort(function(a ,b) {
+					return b.int - a.int; 
+				});
+				let lis = "";
+				for (let i = 0; i < compare.length; i++) {
+					if (i >= 5) {
+						break;
+					} else {
+						lis += "<li class='list-group-item'>" +
+							(i+1) + ". " +
+							compare[i].date + " - " +
+							compare[i].def + " (" +
+							compare[i].int + ")" + " - " +
+							compare[i].result + ": " +
+							compare[i].desc +
+							"</li>";
+					}
+				}
+				$("#compare-list").children().remove();
+				$("#compare-list").append(lis);
+			},
 			fetchAll: function() {
 				let fetchDefs = $.ajax({
 					type: "GET",
@@ -158,11 +193,12 @@ $(function() {
 			}
 		}
 	});
-	//click the button and create or delete a log entry
+	//bind button events
 	$("#log-save").on("click", WorkoutLog.log.create);
 	$("#log-update").on("click", WorkoutLog.log.updateWorkout);
 	$("#history-list").delegate('.update', 'click', WorkoutLog.log.getWorkout);
 	$("#history-list").delegate('.remove', 'click', WorkoutLog.log.delete);
+	$("#compareBtn").on('click', WorkoutLog.log.compareWorkouts);
 	if (window.localStorage.getItem("sessionToken")) {
 		WorkoutLog.log.fetchAll();
 	}

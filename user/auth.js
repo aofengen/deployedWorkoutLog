@@ -37,9 +37,12 @@ $(function(){
 					$(".nav").show();
 					$("#su_username").val("");
 					$("#su_password").val("");
+					$("#su_error").hide();
 					$('a[href="#define"]').tab("show"); //routing
 				}).fail(function() {
 					$("#su_error").text("There was an issue with sign up").show();
+					$("#su_username").val("");
+					$("#su_password").val("");
 				})
 			} 
 		},
@@ -79,9 +82,12 @@ $(function(){
 					$(".nav").show();
 					$("#li_username").val("");
 					$("#li_password").val("");
+					$("#li_error").hide();
 					$('a[href="#define"]').tab("show");
 				}).fail(function (){
 					$("#li_error").text("Unable to login.").show();
+					$("#li_username").val("");
+					$("#li_password").val("");
 				})
 			}						
 		},
@@ -91,6 +97,7 @@ $(function(){
 				window.localStorage.removeItem("sessionToken");
 			}
 			$(".nav").hide().addClass("disabled");
+			$('a[href="#loginPage"]').tab("show");
 		}
 	});
 		//bind events

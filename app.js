@@ -43,6 +43,9 @@ $(function() {
 		if (target === "#history") {
 			WorkoutLog.log.setHistory();
 		}
+		if (target === "#compare") {
+			WorkoutLog.log.setDefinitions("compare");
+		}
 	});
 
 	let token = window.localStorage.getItem("sessionToken");

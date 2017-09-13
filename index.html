@@ -12,17 +12,18 @@
 	</head>
 	<body>
 		<ul class="nav nav-tabs hidden">
-			<li><a href="#logout" id="logoutTab" class="disabled" data-toggle="tab">Logout</a></li>
+			<li><a href="#loginPage" id="logout" class="disabled" data-toggle="tab">Logout</a></li>
 			<!-- <li id="hidden"><a href="#home" id="homePage" data-toggle="tab">Home</a></li> -->
-			<li><a href="#define" id="defineTab" data-toggle="tab" class="disabled">Define a workout</a></li>
-			<li><a href="#log" id="logTab" data-toggle="tab" class="disabled">Log a workout</a></li>
-			<li><a href="#history" id="historyTab" data-toggle="tab" class="disabled">View previous workouts</a></li>
+			<li><a href="#define" data-toggle="tab" class="disabled">Define a workout</a></li>
+			<li><a href="#log" data-toggle="tab" class="disabled">Log a workout</a></li>
+			<li><a href="#history" data-toggle="tab" class="disabled">View previous workouts</a></li>
+			<li><a href="#compare" data-toggle="tab" class="disabled">Compare previous workouts</a></li>
 			<a href="#update-log" data-toggle="tab" class="disabled" type="hidden"></a>
 		</ul>
 
 		<div class="container">
 			<div class="tab-content">
-				<div class="tab-pane active" id="home">
+				<div class="tab-pane active" id="loginPage">
 					<h1>Workout Log!</h1>
 					<div id="forLogin">
 						<button data-toggle="modal" data-target="#login-modal" class="btn btn-primary">Login</button>
@@ -33,7 +34,7 @@
 					</div>
 				</div>
 				<div class="tab-pane fade" id="define">
-					<h2>How Did You Workout?</h2>
+					<h2>How did you workout?</h2>
 					<br>
 					<div class="row">
 						<div class="col-md-4"></div>
@@ -58,6 +59,8 @@
 					<div class="row">
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
+							<h3>Date</h3>
+							<input type="text" class=form-control id="log-date">
 							<h3>Result</h3>
 							<input type="text" class="form-control" id="log-result" />
 							<h3>Workout Select:</h3>
@@ -88,6 +91,8 @@
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
 							<h2>Edit Your Workout:</h2>
+							<h3>Date</h3>
+							<input type="text" class=form-control id="update-date">
 							<h3>Result</h3>
 							<input type="hidden" class="form-control" id="update-id" />
 							<input type="text" class="form-control" id="update-result" />
@@ -126,6 +131,23 @@
 						<div class="col-md-4"></div>
 					</div>
 				</div>
+					<div class="tab-pane fade" id="compare">
+					<h2>Workout Hall of Fame!</h2>
+					<br>
+					<div class="row">
+						<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<h3>Workout Select:</h3>
+								<select id="compare-definition" class="form-control"></select>
+								<br>
+								<button class="btn btn-primary" id="compareBtn">Search</button>
+								<br>
+								<ol class="list-group" id="compare-list">
+								</ol>
+							</div>
+						<div class="col-md-4"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- login screen-->
@@ -145,7 +167,7 @@
 						<input type="password" class="form-control" id="li_password" />
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-default" id="li_cancel" data-dismiss="modal">Cancel</button>
 						<button class="but btn-primary" id="login" type="button">Login</button>
 					</div>
 				</div>
@@ -168,7 +190,7 @@
 						<input type="password" id="su_password" />
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
+						<button class="btn btn-default" type="button" id="su_cancel" data-dismiss="modal">Cancel</button>
 						<button id="signup" type="button" class="btn btn-primary">Signup</button>
 					</div>
 				</div>
