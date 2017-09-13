@@ -44,3 +44,7 @@ label {
 	bottom: 0;
 	left: 0;
 }
+
+.saveBtn {
+	align-content: center;
+}

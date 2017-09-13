@@ -48,7 +48,7 @@
 								<option>Reps</option>
 							</select>
 							<br>
-							<button id="def-save" class="btn btn-primary">Save</button>
+							<button id="def-save" class="btn btn-primary saveBtn">Save</button>
 						</div>
 						<div class="col-md-4"></div>
 					</div>
@@ -57,12 +57,16 @@
 					<h2>Describe your workout:</h2>
 					<br>
 					<div class="row">
-						<div class="col-md-4"></div>
+						<div class="col-md-2"></div>
 						<div class="col-md-4">
 							<h3>Date</h3>
 							<input type="text" class=form-control id="log-date">
 							<h3>Result</h3>
 							<input type="text" class="form-control" id="log-result" />
+							<h3>Notes</h3>
+							<textarea id="log-description" rows="3" class="form-control"></textarea>
+						</div>
+						<div class="col-md-4">
 							<h3>Workout Select:</h3>
 							<select class="form-control" id="log-definition"></select>
 							<h3>Intensity:</h3>
@@ -78,10 +82,8 @@
 								<option>9</option>
 								<option>10</option>
 							</select>
-							<h3>Notes</h3>
-							<textarea id="log-description" rows="3" class="form-control"></textarea>
 							<br>
-							<button class="btn btn-primary" id="log-save">Save</button>
+							<button class="btn btn-primary saveBtn id="log-save">Save</button>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -117,7 +119,7 @@
 								<option>10</option>
 							</select>
 							<br>
-							<button class="btn btn-primary" id="log-update">Save</button>
+							<button class="btn btn-primary saveBtn" id="log-update">Save</button>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -144,6 +146,7 @@
 								<select id="compare-definition" class="form-control"></select>
 								<br>
 								<button class="btn btn-primary" id="compareBtn">Search</button>
+								<br>
 								<br>
 								<ol class="list-group" id="compare-list">
 								</ol>
