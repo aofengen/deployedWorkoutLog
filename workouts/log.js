@@ -95,7 +95,8 @@ $(function() {
 						break;
 					}
 				}
-				updateLog.id = Number.parseInt(updateLog.id, 10)
+				updateLog.id = Number.parseInt(updateLog.id, 10);
+				WorkoutLog.log.workouts.push(updateLog);
 				let updateLogData = {log: updateLog};
 				let updater = $.ajax({
 					type: "PUT",
