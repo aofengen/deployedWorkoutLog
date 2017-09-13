@@ -72,7 +72,7 @@ $(function() {
 				console.log(getLog);
 				getLog.done(function(data){
 					$('a[href="#update-log"]').tab("show");
-					$('#update-date').val(data.result);
+					$('#update-date').val(data.date);
 					$('#update-result').val(data.result);
 					$('#update-description').val(data.desc);
 					$('#update-id').val(data.id);
