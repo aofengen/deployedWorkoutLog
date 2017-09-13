@@ -39,7 +39,8 @@ label {
 	text-align: center;
 }
 
-div.clear {
-	clear: both;
-	font-size: 1%;
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
 }
