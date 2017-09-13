@@ -46,5 +46,6 @@ label {
 }
 
 .centerBtn {
-	margin: auto;
+	display: flex;
+	justify-content: center;
 }
