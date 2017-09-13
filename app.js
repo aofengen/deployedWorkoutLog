@@ -31,6 +31,7 @@ $(function() {
 		}
 	});
 
+
 	//bind tab change events
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		let target = $(e.target).attr("href"); //activated tab
