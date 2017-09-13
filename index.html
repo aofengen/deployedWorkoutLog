@@ -87,15 +87,20 @@
 					</div>
 				</div>
 				<div class="tab-pane fade" id="update-log">
+					<h2>Edit your workout:</h2>
+					<br>
 					<div class="row">
-						<div class="col-md-4"></div>
+					<div class="col-md-1"></div>
 						<div class="col-md-4">
-							<h2>Edit your workout:</h2>
 							<h3>Date</h3>
 							<input type="text" class=form-control id="update-date" />
 							<h3>Result</h3>
 							<input type="hidden" class="form-control" id="update-id" />
 							<input type="text" class="form-control" id="update-result" />
+							<h3>Notes</h3>
+							<textarea id="update-description" rows="3" class="form-control"></textarea>
+						</div>
+						<div class="col-md-4">
 							<h3>Workout Select:</h3>
 							<select id="update-definition" class="form-control"></select>
 							<h3>Intensity:</h3>
@@ -111,8 +116,6 @@
 								<option>9</option>
 								<option>10</option>
 							</select>
-							<h3>Notes</h3>
-							<textarea id="update-description" rows="3" class="form-control"></textarea>
 							<br>
 							<button class="btn btn-primary" id="log-update">Save</button>
 						</div>
