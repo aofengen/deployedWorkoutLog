@@ -3,9 +3,9 @@ $(function(){
 		//signup method
 		signup: function() {
 			//username and password variables
-			let username = $("#su_username").val();
-			let password = $("#su_password").val();
-			if (username === "" || password === "") {
+			let username = $("#su_username").val().trim();
+			let password = $("#su_password").val().trim();
+			if (username === "" || password === "" ) {
 				$("#su_error").text("Please enter a username and password").show();
 			} else {
 				//user object
@@ -50,8 +50,8 @@ $(function(){
 		//login method
 		login: function() {
 			//login variables
-			let username = $("#li_username").val();
-			let password = $("#li_password").val();
+			let username = $("#li_username").val().trim();
+			let password = $("#li_password").val().trim();
 			if (username === "" || password === "") {
 				$("#li_error").text("Please enter a username and password").show();
 			} else {
