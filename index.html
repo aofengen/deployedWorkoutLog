@@ -57,16 +57,15 @@
 					<h2>Describe your workout:</h2>
 					<br>
 					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-4">
+						<div class="col-md-3"></div>
+						<div class="col-md-3">
 							<h3>Date</h3>
 							<input type="text" class=form-control id="log-date">
 							<h3>Result</h3>
 							<input type="text" class="form-control" id="log-result" />
-							<h3>Notes</h3>
-							<textarea id="log-description" rows="3" class="form-control"></textarea>
+							
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<h3>Workout Select:</h3>
 							<select class="form-control" id="log-definition"></select>
 							<h3>Intensity:</h3>
@@ -82,28 +81,37 @@
 								<option>9</option>
 								<option>10</option>
 							</select>
+						</div>
+						<div class="col-md-3"></div>
+					</div>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<h3>Notes</h3>
+							<textarea id="log-description" rows="3" class="form-control"></textarea>
 							<br>
 							<br>
 							<br>
 							<button class="btn btn-primary" id="log-save">Save</button>
 						</div>
+						<div class="col-md-4"></div>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="update-log">
 					<h2>Edit your workout:</h2>
 					<br>
 					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-4">
+						<div class="col-md-3"></div>
+						<div class="col-md-3">
 							<h3>Date</h3>
 							<input type="text" class=form-control id="update-date" />
 							<h3>Result</h3>
 							<input type="hidden" class="form-control" id="update-id" />
 							<input type="text" class="form-control" id="update-result" />
-							<h3>Notes</h3>
-							<textarea id="update-description" rows="3" class="form-control"></textarea>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<h3>Workout Select:</h3>
 							<select id="update-definition" class="form-control"></select>
 							<h3>Intensity:</h3>
@@ -119,9 +127,22 @@
 								<option>9</option>
 								<option>10</option>
 							</select>
+						</div>
+						<div class="col-md-3"></div>
+					</div>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<h3>Notes</h3>
+							<textarea id="update-description" rows="3" class="form-control"></textarea>
+							<br>
+							<br>
 							<br>
 							<button class="btn btn-primary" id="log-update">Save</button>
 						</div>
+						<div class="col-md-4"></div>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="history">
