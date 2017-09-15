@@ -178,15 +178,8 @@ $(function() {
 				$("#compare-list").children().remove();
 				$("#compare-list").append(lis);
 			},
-			clearHOF: function(){
-				let compare = WorkoutLog.log.compareW;
-				while (compare.length > 0) {
-					if (compare.length <= 0) {
-						break;
-					} else {
-						compare.shift();
-					}
-				}
+			clearHOF: function() {
+				$("#compare-list").children().remove();
 			},
 			fetchAll: function() {
 				let fetchDefs = $.ajax({
