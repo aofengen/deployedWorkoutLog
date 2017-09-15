@@ -2,7 +2,6 @@ $(function() {
 	$.extend(WorkoutLog, {
 		log: {
 			workouts: [],
-			compareW: [],
 
 			setDefinitions: function(type) {
 				let defs = WorkoutLog.definition.userDefinitions;
@@ -151,7 +150,7 @@ $(function() {
 				});
 				let sortV = $("#compare-definition option:selected").text();
 				let len = history.length;
-				let compare = WorkoutLog.log.compareW;
+				let compare = [];
 				for (let i = 0; i < len; i++){
 					if (history[i].def === sortV) {
 						compare.push(history[i]);
@@ -179,7 +178,7 @@ $(function() {
 				$("#compare-list").append(lis);
 			},
 			clearHOF: function() {
-				$("#compare-list").children().remove();
+				$("#compare-list").empty();
 			},
 			fetchAll: function() {
 				let fetchDefs = $.ajax({
