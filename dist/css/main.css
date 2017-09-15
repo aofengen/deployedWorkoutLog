@@ -30,6 +30,11 @@ h4 {
 	text-align: center;	
 }
 
+h5 {
+	font-size: 15px;
+	text-align: center;
+}
+
 label {
 	color: black;
 }
