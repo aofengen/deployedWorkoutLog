@@ -1,5 +1,5 @@
 body {
-	background-image: url('/dist/img/homePage.jpg');
+	background-image: url('/dist/img/homePage.jpg') no-repeat;
 	background-size: 100%; 
 }
 

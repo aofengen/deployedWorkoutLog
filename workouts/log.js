@@ -178,7 +178,7 @@ $(function() {
 				$("#compare-list").append(lis);
 			},
 			clearHOF: function() {
-				$("#compare-list").empty();
+				$("#compare-list").children().remove();
 			},
 			fetchAll: function() {
 				let fetchDefs = $.ajax({
