@@ -46,6 +46,7 @@ $(function() {
 		}
 		if (target === "#compare") {
 			WorkoutLog.log.setDefinitions("compare");
+			WorkoutLog.log.clearHOF();
 		}
 	});
 
