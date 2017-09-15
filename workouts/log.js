@@ -203,7 +203,8 @@ $(function() {
 	$("#history-list").delegate('.update', 'click', WorkoutLog.log.getWorkout);
 	$("#history-list").delegate('.remove', 'click', WorkoutLog.log.delete);
 	$("#compareBtn").on('click', WorkoutLog.log.compareWorkouts);
-	$("#compare").on('click', WorkoutLog.log.clearHOF);
+	// $("#compare").on('click', WorkoutLog.log.clearHOF);
+	
 	if (window.localStorage.getItem("sessionToken")) {
 		WorkoutLog.log.fetchAll();
 	}
