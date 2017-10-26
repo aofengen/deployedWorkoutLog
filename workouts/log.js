@@ -28,8 +28,8 @@ $(function() {
 					history[i].result + " " +
 					//pass the log.id into the button's id attribute
 					"<div class='pull-right'>" +
-						"<button id='" + history[i].id + "' class='update'><b>U</b></button>" +
-						"<button id='" + history[i].id + "' class='remove'><b>X</b></button>" +
+						"<button id='" + history[i].id + "' class='update'><b>Edit</b></button>" +
+						"<button id='" + history[i].id + "' class='remove'><b>Remove</b></button>" +
 					"</div></li>";
 				}
 				$("#history-list").children().remove();
@@ -204,7 +204,7 @@ $(function() {
 	$("#history-list").delegate('.remove', 'click', WorkoutLog.log.delete);
 	$("#compareBtn").on('click', WorkoutLog.log.compareWorkouts);
 	// $("#compare").on('click', WorkoutLog.log.clearHOF);
-	
+
 	if (window.localStorage.getItem("sessionToken")) {
 		WorkoutLog.log.fetchAll();
 	}
